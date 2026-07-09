@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio de Manda Germain — Développeur Python & Intelligence Artificielle">
+  <title>Manda Germain — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <nav class="nav" id="nav">
+    <a href="#" class="nav-logo">MG<span class="nav-dot">.</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#accueil">Accueil</a></li>
+      <li><a href="#apropos">À propos</a></li>
+      <li><a href="#competences">Compétences</a></li>
+      <li><a href="#projets">Projets</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero" id="accueil">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+      <div class="hero-orb hero-orb--1"></div>
+      <div class="hero-orb hero-orb--2"></div>
+    </div>
+    <div class="container hero-content">
+      <div class="hero-layout">
+        <div class="hero-text">
+          <p class="hero-badge fade-up">Étudiant LSI-IA · Développeur Python</p>
+          <h1 class="hero-title fade-up">
+            Manda<br><span class="hero-accent">Germain</span>
+          </h1>
+          <p class="hero-desc fade-up">
+            Je conçois des applications intelligentes et des outils pratiques —
+            de la gestion de restaurant à la reconnaissance de formes par IA.
+          </p>
+          <div class="hero-actions fade-up">
+            <a href="#projets" class="btn btn-primary">Voir mes projets</a>
+            <a href="#contact" class="btn btn-outline">Me contacter</a>
+          </div>
+          <div class="hero-stats fade-up">
+            <div class="stat">
+              <span class="stat-num">4+</span>
+              <span class="stat-label">Projets réalisés</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">Python</span>
+              <span class="stat-label">Langage principal</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">IA</span>
+              <span class="stat-label">Vision & analyse</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-photo fade-up">
+          <div class="hero-photo-frame">
+            <img
+              src="img/profile.jpg"
+              alt="Manda Germain — Développeur Python & IA"
+              width="420"
+              height="560"
+              loading="eager"
+            >
+          </div>
+          <div class="hero-photo-glow" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+    <a href="#apropos" class="scroll-hint" aria-label="Défiler vers le bas">
+      <span></span>
+    </a>
+  </header>
+
+  <section class="section about" id="apropos">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">À propos</span>
+        <h2 class="section-title">Qui suis-je ?</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>
+            Passionné par l'informatique et l'intelligence artificielle, je suis
+            étudiant en <strong>Licence Sciences de l'Informatique — IA (LSI-IA)</strong>.
+            J'aime transformer des idées concrètes en logiciels fonctionnels, avec une
+            attention particulière portée à l'expérience utilisateur et à la qualité du code.
+          </p>
+          <p>
+            Avant de me lancer dans l'informatique, j'ai terminé mes <strong>études secondaires
+            en tant qu'électricien</strong>. Cette formation m'a donné une solide base technique,
+            le sens du terrain et une rigueur que j'applique aujourd'hui dans mes projets numériques.
+          </p>
+          <p>
+            Parallèlement à mes études, je réalise mon <strong>stage à la Centrale hydroélectrique
+            de Ruzizi 1</strong>. Cette expérience m'expose au monde de l'énergie et de l'industrie,
+            tout en renforçant mes compétences en maintenance, en analyse et en travail d'équipe.
+          </p>
+          <p>
+            Mes projets couvrent le développement d'applications de bureau en Python,
+            la vision par ordinateur, et l'exploration créative avec des scripts graphiques.
+            Chaque réalisation est une occasion d'apprendre et de repousser mes limites.
+          </p>
+        </div>
+        <div class="about-cards reveal">
+          <div class="about-card">
+            <div class="about-card-icon">🎓</div>
+            <h3>Formation</h3>
+            <p>Études secondaires en électricité · Licence LSI-IA en cours</p>
+          </div>
+          <div class="about-card">
+            <div class="about-card-icon">⚡</div>
+            <h3>Stage</h3>
+            <p>Centrale hydroélectrique de Ruzizi 1 — expérience terrain en milieu industriel</p>
+          </div>
+          <div class="about-card">
+            <div class="about-card-icon">🚀</div>
+            <h3>Objectif</h3>
+            <p>Allier technique, informatique et IA pour créer des solutions utiles au quotidien</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section skills" id="competences">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Compétences</span>
+        <h2 class="section-title">Ce que je maîtrise</h2>
+      </div>
+      <div class="skills-grid reveal">
+        <div class="skill-card">
+          <div class="skill-header">
+            <span class="skill-icon">🐍</span>
+            <h3>Python</h3>
+          </div>
+          <p>Applications de bureau, scripts, traitement de données et automatisation</p>
+          <div class="skill-bar"><div class="skill-fill" data-level="90"></div></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-header">
+            <span class="skill-icon">🖥️</span>
+            <h3>Interfaces graphiques</h3>
+          </div>
+          <p>Tkinter, design moderne, expérience utilisateur soignée</p>
+          <div class="skill-bar"><div class="skill-fill" data-level="85"></div></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-header">
+            <span class="skill-icon">🧠</span>
+            <h3>Intelligence Artificielle</h3>
+          </div>
+          <p>Vision par ordinateur, reconnaissance de formes, notebooks Jupyter</p>
+          <div class="skill-bar"><div class="skill-fill" data-level="75"></div></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-header">
+            <span class="skill-icon">🗄️</span>
+            <h3>Bases de données</h3>
+          </div>
+          <p>SQLite, modélisation, requêtes et gestion de données</p>
+          <div class="skill-bar"><div class="skill-fill" data-level="80"></div></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-header">
+            <span class="skill-icon">🌐</span>
+            <h3>Web</h3>
+          </div>
+          <p>HTML, CSS, serveurs HTTP locaux, génération de pages dynamiques</p>
+          <div class="skill-bar"><div class="skill-fill" data-level="70"></div></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-header">
+            <span class="skill-icon">📄</span>
+            <h3>Outils & libs</h3>
+          </div>
+          <p>ReportLab, QR Code, OpenCV, Pillow, Turtle Graphics</p>
+          <div class="skill-bar"><div class="skill-fill" data-level="80"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section projects" id="projets">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Projets</span>
+        <h2 class="section-title">Mes réalisations</h2>
+      </div>
+      <div class="projects-grid">
+
+        <article class="project-card reveal project-card--featured">
+          <div class="project-visual project-visual--resto">
+            <span class="project-tag">Application de bureau</span>
+          </div>
+          <div class="project-body">
+            <h3>RestoManager</h3>
+            <p>
+              Logiciel complet de gestion de restaurant : menu, commandes, tables,
+              stock, factures PDF, tableau de bord et QR code scannable pour le menu
+              via serveur Wi-Fi local.
+            </p>
+            <ul class="project-tech">
+              <li>Python</li>
+              <li>Tkinter</li>
+              <li>SQLite</li>
+              <li>ReportLab</li>
+              <li>QR Code</li>
+            </ul>
+            <div class="project-links">
+              <span class="project-path">📁 Desktop/restaurant</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-visual project-visual--shapes">
+            <span class="project-tag">Vision par ordinateur</span>
+          </div>
+          <div class="project-body">
+            <h3>Détecteur de Formes</h3>
+            <p>
+              Analyse d'images pour détecter et nommer automatiquement les formes
+              géométriques (cercles, triangles, rectangles…) avec annotation visuelle.
+            </p>
+            <ul class="project-tech">
+              <li>Python</li>
+              <li>OpenCV</li>
+              <li>Traitement d'image</li>
+            </ul>
+            <div class="project-links">
+              <span class="project-path">📁 Desktop/reconnaissance_formes</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-visual project-visual--ia">
+            <span class="project-tag">Projet tutoré</span>
+          </div>
+          <div class="project-body">
+            <h3>Projet IA — Formes Géométriques</h3>
+            <p>
+              Projet tutoré de Licence en IA : notebook Jupyter explorant la
+              reconnaissance et la classification de formes géométriques.
+            </p>
+            <ul class="project-tech">
+              <li>Jupyter</li>
+              <li>Machine Learning</li>
+              <li>Python</li>
+            </ul>
+            <div class="project-links">
+              <span class="project-path">📁 Desktop/PROJET_TUTORE_LC1_IA</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-visual project-visual--creative">
+            <span class="project-tag">Créatif</span>
+          </div>
+          <div class="project-body">
+            <h3>Art génératif Python</h3>
+            <p>
+              Scripts créatifs avec Turtle Graphics : cœur animé aux couleurs arc-en-ciel
+              et motifs géométriques hypnotiques en HSV.
+            </p>
+            <ul class="project-tech">
+              <li>Python</li>
+              <li>Turtle</li>
+              <li>Math</li>
+            </ul>
+            <div class="project-links">
+              <span class="project-path">📁 Desktop/love.py · python.py</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="contact-box reveal">
+        <div class="contact-info">
+          <span class="section-tag">Contact</span>
+          <h2 class="section-title">Travaillons ensemble</h2>
+          <p>
+            Vous avez un projet, une opportunité ou simplement envie d'échanger ?
+            N'hésitez pas à me contacter.
+          </p>
+          <div class="contact-methods">
+            <a href="https://wa.me/243976471935" target="_blank" rel="noopener" class="contact-link contact-link--whatsapp">
+              <span class="contact-link-icon">💬</span>
+              <span>
+                <small>WhatsApp</small>
+                0976471935
+              </span>
+            </a>
+            <a href="tel:+243976471935" class="contact-link">
+              <span class="contact-link-icon">📞</span>
+              <span>
+                <small>Téléphone</small>
+                0976471935
+              </span>
+            </a>
+            <a href="mailto:manda.germain@email.com" class="contact-link">
+              <span class="contact-link-icon">✉️</span>
+              <span>
+                <small>Email</small>
+                manda.germain@email.com
+              </span>
+            </a>
+            <a href="https://github.com/" target="_blank" rel="noopener" class="contact-link">
+              <span class="contact-link-icon">🔗</span>
+              <span>
+                <small>GitHub</small>
+                github.com/mandagermain
+              </span>
+            </a>
+            <a href="https://linkedin.com/" target="_blank" rel="noopener" class="contact-link">
+              <span class="contact-link-icon">💼</span>
+              <span>
+                <small>LinkedIn</small>
+                linkedin.com/in/mandagermain
+              </span>
+            </a>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label for="name">Nom</label>
+            <input type="text" id="name" name="name" placeholder="Votre nom" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Votre message…" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Envoyer le message</button>
+          <p class="form-note" id="formNote"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© 2026 <strong>Manda Germain</strong> — Tous droits réservés</p>
+      <p class="footer-made">Conçu avec passion en Python & HTML</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
