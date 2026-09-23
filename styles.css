@@ -832,6 +832,7 @@ ul { list-style: none; }
     top: var(--nav-h);
     left: 0;
     right: 0;
+    z-index: 99;
     background: rgba(10, 14, 23, 0.98);
     flex-direction: column;
     padding: 2rem;
@@ -839,12 +840,16 @@ ul { list-style: none; }
     border-bottom: 1px solid var(--border);
     transform: translateY(-120%);
     opacity: 0;
-    transition: transform var(--transition), opacity var(--transition);
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform var(--transition), opacity var(--transition), visibility var(--transition);
   }
 
   .nav-links.open {
     transform: translateY(0);
     opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
   }
 
   .skills-grid {
@@ -863,4 +868,19 @@ ul { list-style: none; }
     flex-direction: column;
     text-align: center;
   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  .fade-up,
+  .reveal,
+  .scroll-hint span,
+  .skill-fill {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
 }

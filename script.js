@@ -1,19 +1,29 @@
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 /* Navigation scroll effect */
 const nav = document.getElementById('nav');
 const navLinks = document.querySelectorAll('.nav-links a');
+const navToggle = document.getElementById('navToggle');
+const navLinksEl = document.getElementById('navLinks');
+
+function closeMobileNav() {
+  navLinksEl.classList.remove('open');
+  navToggle.setAttribute('aria-expanded', 'false');
+  navToggle.setAttribute('aria-label', 'Ouvrir le menu');
+}
 
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 50);
   updateActiveLink();
-});
+}, { passive: true });
 
 function updateActiveLink() {
-  const sections = document.querySelectorAll('section, header');
-  let current = '';
+  const scrollPos = window.scrollY + nav.offsetHeight + 80;
+  const sections = document.querySelectorAll('header[id], section[id]');
+  let current = 'accueil';
 
   sections.forEach(section => {
-    const top = section.offsetTop - 100;
-    if (window.scrollY >= top) {
+    if (section.offsetTop <= scrollPos) {
       current = section.getAttribute('id');
     }
   });
@@ -23,60 +33,75 @@ function updateActiveLink() {
   });
 }
 
-/* Mobile menu */
-const navToggle = document.getElementById('navToggle');
-const navLinksEl = document.getElementById('navLinks');
+updateActiveLink();
 
+/* Mobile menu */
 navToggle.addEventListener('click', () => {
-  navLinksEl.classList.toggle('open');
+  const open = navLinksEl.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  navToggle.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
 });
 
 navLinks.forEach(link => {
-  link.addEventListener('click', () => navLinksEl.classList.remove('open'));
+  link.addEventListener('click', closeMobileNav);
 });
 
-/* Cursor glow */
+/* Cursor glow (desktop only) */
 const glow = document.querySelector('.cursor-glow');
+const finePointer = window.matchMedia('(pointer: fine)').matches;
 
-document.addEventListener('mousemove', (e) => {
-  glow.style.left = e.clientX + 'px';
-  glow.style.top = e.clientY + 'px';
-});
+if (glow && finePointer && !prefersReducedMotion) {
+  document.addEventListener('mousemove', (e) => {
+    glow.style.left = e.clientX + 'px';
+    glow.style.top = e.clientY + 'px';
+  }, { passive: true });
+} else if (glow) {
+  glow.hidden = true;
+}
 
 /* Scroll reveal */
 const revealEls = document.querySelectorAll('.reveal');
 
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('visible'), i * 100);
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.15 }
-);
+if (prefersReducedMotion) {
+  revealEls.forEach(el => el.classList.add('visible'));
+} else {
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 100);
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
 
-revealEls.forEach(el => revealObserver.observe(el));
+  revealEls.forEach(el => revealObserver.observe(el));
+}
 
 /* Skill bars animation */
 const skillBars = document.querySelectorAll('.skill-fill');
 
-const skillObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const level = entry.target.dataset.level;
-        entry.target.style.width = level + '%';
-        skillObserver.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.5 }
-);
+if (prefersReducedMotion) {
+  skillBars.forEach(bar => {
+    bar.style.width = `${bar.dataset.level}%`;
+  });
+} else {
+  const skillObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.width = `${entry.target.dataset.level}%`;
+          skillObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
 
-skillBars.forEach(bar => skillObserver.observe(bar));
+  skillBars.forEach(bar => skillObserver.observe(bar));
+}
 
 /* Contact form */
 const form = document.getElementById('contactForm');
