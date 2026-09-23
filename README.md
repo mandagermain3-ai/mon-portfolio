@@ -26,4 +26,4 @@ Placez votre photo dans `img/profile.jpg` (format portrait recommandé).
 
 ### Contact
 
-Mettez à jour l’email dans `index.html` et `script.js` si `manda.germain@email.com` n’est pas votre adresse réelle.
+Email affiché : `mandagermain3@gmail.com` (`index.html` et `script.js`).

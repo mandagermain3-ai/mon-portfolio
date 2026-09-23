@@ -116,7 +116,7 @@ form.addEventListener('submit', (e) => {
 
   const subject = encodeURIComponent(`Message de ${name}`);
   const body = encodeURIComponent(`Nom : ${name}\nEmail : ${email}\n\n${message}`);
-  const mailto = `mailto:manda.germain@email.com?subject=${subject}&body=${body}`;
+  const mailto = `mailto:mandagermain3@gmail.com?subject=${subject}&body=${body}`;
 
   window.location.href = mailto;
   formNote.textContent = 'Votre client mail va s\'ouvrir…';
